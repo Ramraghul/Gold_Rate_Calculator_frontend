@@ -5,7 +5,7 @@ import "chartjs-plugin-streaming";
 const data = {
   datasets: [
     {
-      label: "Created",
+      label: "BSI 916",
       borderColor: "rgb(255, 99, 132)",
       backgroundColor: "rgba(255, 99, 132, 0.5)",
       lineTension: 0,
@@ -13,7 +13,7 @@ const data = {
       data: []
     },
     {
-        label: "Resolved",
+        label: "18k",
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(0,255,0,0.3)",
         lineTension: 0,

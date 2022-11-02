@@ -2,7 +2,8 @@ import React from 'react';
 import Nav from './Nav';
 import Footer from './Footer';
 import Rate from '../Auth/GoldRatebar/Rate'
-import LineChart from '../../linechart.js'
+import LineChart from '../Charts/linechart'
+import Calculator from '../Calculator/Calculator';
 function Home() {
     return (
         <>
@@ -16,9 +17,13 @@ function Home() {
                                 <Rate></Rate>
                                 <div className="row">
                                     <div className="col-lg-12">
-                                    <LineChart></LineChart>
+                                    <div className='trans rounded rounded mb-3'>
+                                    {/* <LineChart></LineChart> */}
                                     </div>
-                                    
+                                    </div>
+                                    <div className="col-lg-12">
+                                        <Calculator></Calculator>
+                                    </div>
                                 </div>
                             </div>
                         </div>

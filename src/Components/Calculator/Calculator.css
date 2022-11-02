@@ -1,0 +1,16 @@
+.Cal{
+    width: 15rem;
+    outline: none;
+    overflow: hidden;
+}
+.Cal1{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.price{
+    backdrop-filter: blur(3px);
+    box-sizing: 0 25px 25px rgba(225, 225, 225, 0.2);
+    background: rgba(225, 225, 225, 0.4);
+}
