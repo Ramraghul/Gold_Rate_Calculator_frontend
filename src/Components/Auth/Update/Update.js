@@ -5,7 +5,7 @@ function Update (){
     return(
         <>
         <div className="Change">
-                <div className="logo">
+                <div className="log">
                     <img src="./Stuff/Login.png" alt=""/>
                 </div>
                 <div className="text-center mt-4 name">

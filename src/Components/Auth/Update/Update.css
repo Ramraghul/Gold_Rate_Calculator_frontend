@@ -12,12 +12,12 @@
     
 }
 
-.logo {
+.log {
     width: 80px;
     margin: auto;
 }
 
-.logo img {
+.log img {
     width: 100%;
     height: 80px;
     object-fit: cover;

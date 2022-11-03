@@ -5,19 +5,19 @@
     padding: 40px 30px 30px 30px;
     /* background-color: #e0aa3e; */
     border-radius: 15px;
-    box-shadow: 13px 13px 20px #bc9928,-13px -13px 20px #bc9928;
-    background: rgb(224,172,62,);
-    backdrop-filter: blur(1px);
+    box-shadow: 13px 13px 20px #000000,-13px -13px 20px #000000;
+    /* background: rgb(224,172,62,); */
+    backdrop-filter: blur(2px);
     box-sizing: 0 25px 25px rgb(182,153,40,0.9);
     
 }
 
-.logo {
+.togo {
     width: 80px;
     margin: auto;
 }
 
-.logo img {
+.togo img {
     width: 100%;
     height: 80px;
     object-fit: cover;
@@ -33,7 +33,7 @@
     font-size: 1.4rem;
     letter-spacing: 1.3px;
     padding-left: 10px;
-    color: #555;
+    color: rgb(0, 0, 0);
 }
 
 .Forgot .form-field input {

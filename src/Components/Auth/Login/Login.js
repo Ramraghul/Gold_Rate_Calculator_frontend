@@ -11,7 +11,7 @@ function Login() {
     return (
         <>
             <div className="wrapper">
-                <div className="logo">
+                <div className="fir">
                     <img src="./Stuff/Login.png" alt=""/>
                 </div>
                 <div className="text-center mt-4 name">
@@ -29,7 +29,7 @@ function Login() {
                     <button className="btn mt-3" onClick={()=>{conform()}}>Login</button>
                 </form>
                 <div className="text-center fs-6">
-                    <a href="Forgot" className="text-white">Forget password?<>&nbsp;</></a>or<a href="/Registration" className="text-white"><>&nbsp;</>Sign up</a>
+                    <a href="Forgot" className="text-white">Forget password? or<>&nbsp;</></a><a href="/Registration" className="text-white"><>&nbsp;</>Sign up</a>
                 </div>
             </div>
         </>

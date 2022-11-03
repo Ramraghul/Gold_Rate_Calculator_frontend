@@ -5,7 +5,7 @@ function Forgot() {
     return (
         <>
             <div className="Forgot">
-                <div className="logo">
+                <div className="togo">
                     <img src="./Stuff/Reset.png" alt="" />
                 </div>
                 <div className="text-center mt-4 name">

@@ -24,7 +24,6 @@ function Calculator() {
     let getData = async () => {
         let response = await axios.get("https://goldrate-calculator.herokuapp.com/all/goldata");
         setres(response.data);
-        console.log(response.data)
     };
 
     useEffect(() => {
@@ -68,7 +67,7 @@ function Calculator() {
         setrespurity(purity);
         setresgram(gram);
 
-        if (purity == "24Carat") {
+        if (purity === "24Carat") {
             setresval(f);
             let value = (f / 10) * gram;
             setresult(value);
@@ -82,7 +81,7 @@ function Calculator() {
 
     const handleDownload = () => {
         const content = pdfRef.current;
-    
+
         const doc = new jsPDF();
         doc.html(content, {
             callback: function (doc) {
@@ -90,13 +89,13 @@ function Calculator() {
             },
             width: 100, // <- here
             windowWidth: 1200, // <- here
-            hight:500,
-            margin:70,
-            padding:2,
+            hight: 500,
+            margin: 70,
+            padding: 2,
 
         });
     };
-    
+
 
 
     return (
@@ -110,7 +109,7 @@ function Calculator() {
                 <div className="card-header">
                     <form className='Cal1 needs-validation' onSubmit={handlesubmit}>
                         <select className="form-select mb-2 mt-1 price Cal" onChange={handleChange} value={city} aria-label=".form-select-lg example" required>
-                            <option selected>Select City</option>
+                            {!city && <option value="DEFAULT" selected>Select City</option>}
                             {
                                 states.map((ele, i) => {
                                     return (

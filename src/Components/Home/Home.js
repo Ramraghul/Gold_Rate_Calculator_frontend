@@ -7,10 +7,7 @@ import Calculator from '../Calculator/Calculator';
 function Home() {
     return (
         <>
-            {/* <div id="page-top">
-                <div id="wrapper"> */}
-                    
-                    <div id="content-wrapper" className="d-flex flex-column">
+                    <div id="content-wrapper" className="d-flex flex-column trans">
                         <div id="content">
                             <Nav></Nav>
                             <div className="container-fluid">
@@ -29,8 +26,6 @@ function Home() {
                         </div>
                         <Footer></Footer>
                     </div>
-                {/* </div>
-            </div> */}
         </>
     )
 }
