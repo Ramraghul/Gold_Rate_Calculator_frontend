@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Nav() {
     return (
@@ -17,20 +18,16 @@ function Nav() {
                 <ul className="navbar-nav ml-auto">
                     <div className="topbar-divider d-none d-sm-block"></div>
                     <li className="nav-item dropdown no-arrow">
-                        <a
+                        <Link
                             className="nav-link dropdown-toggle"
-                            href="#"
                             id="userDropdown"
                             role="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
                         >
                             <span className="mr-2 d-none d-lg-inline text-gray-600 small text-black">
                                 User Name
                             </span>
                             <img className="img-profile rounded-circle" src="./avatar.png" alt="Avatar"/>
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </nav>

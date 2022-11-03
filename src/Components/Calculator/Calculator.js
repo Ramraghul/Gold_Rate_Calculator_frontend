@@ -23,7 +23,11 @@ function Calculator() {
 
     let getData = async () => {
         let response = await axios.get("https://goldrate-calculator.herokuapp.com/all/goldata");
-        setres(response.data);
+        try {
+            setres(response.data);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     useEffect(() => {
@@ -109,7 +113,7 @@ function Calculator() {
                 <div className="card-header">
                     <form className='Cal1 needs-validation' onSubmit={handlesubmit}>
                         <select className="form-select mb-2 mt-1 price Cal" onChange={handleChange} value={city} aria-label=".form-select-lg example" required>
-                            {!city && <option value="DEFAULT" selected>Select City</option>}
+                            {!city && <option value="DEFAULT">Select City</option>}
                             {
                                 states.map((ele, i) => {
                                     return (
@@ -124,7 +128,7 @@ function Calculator() {
                         </div>
 
                         <select className="form-select mb-2 mt-1 price Cal" required onChange={handleChange1} value={purity} aria-label="Default select example" >
-                            <option selected>Select Purity</option>
+                            <option value="DEFAULT">Select Purity</option>
                             <option value="24Carat">24 Carat</option>
                             <option value="22Carat">22 Carat</option>
                         </select>
