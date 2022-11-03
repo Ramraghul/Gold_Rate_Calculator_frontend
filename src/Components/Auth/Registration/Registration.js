@@ -28,7 +28,7 @@ function Registration(){
                     <button className="btn mt-3">Register</button>
                 </form>
                 <div className="text-center fs-6">
-                    <h6>Already Have a Account</h6><a href="/" className="text-white"><u>Click Here</u></a>
+                    <h6>Already Have a Account</h6><a href="/" className="text-dark"><u>Click Here</u></a>
                 </div>
             </div>
         </>

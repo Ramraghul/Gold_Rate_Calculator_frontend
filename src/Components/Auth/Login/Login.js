@@ -29,7 +29,7 @@ function Login() {
                     <button className="btn mt-3" onClick={()=>{conform()}}>Login</button>
                 </form>
                 <div className="text-center fs-6">
-                    <a href="Forgot" className="text-white">Forget password? or<>&nbsp;</></a><a href="/Registration" className="text-white"><>&nbsp;</>Sign up</a>
+                    <a href="Forgot" className="text-black">Forget password? or<>&nbsp;</></a><a href="/Registration" className="text-black"><>&nbsp;</>Sign up</a>
                 </div>
             </div>
         </>
