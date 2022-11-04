@@ -19,11 +19,13 @@ function Nav() {
                     <div className="topbar-divider d-none d-sm-block"></div>
                     <li className="nav-item dropdown no-arrow">
                         <Link
+                        to={'/'}
                             className="nav-link dropdown-toggle"
                             id="userDropdown"
                             role="button"
                         >
                             <span className="mr-2 d-none d-lg-inline text-gray-600 small text-black">
+                                Logout
                             </span>
                             <img className="img-profile rounded-circle" src="./avatar.png" alt="Avatar"/>
                         </Link>

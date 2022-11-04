@@ -3,11 +3,26 @@ import { useFormik } from "formik";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import './Forgot.css';
+import Swal from 'sweetalert2';
 
 function Forgot() {
 
     let navigate = useNavigate()
 
+    //Alert function;
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+
+    //Formik Method
     let formik = useFormik({
         initialValues: {
             Email: ""
@@ -24,15 +39,14 @@ function Forgot() {
             try {
                 let status = await axios.post('https://gold-rate-calculator.herokuapp.com/Reset', User);
                 console.log(status);
-                alert('Check your Mail')
+                Toast.fire({ icon: 'success', title: 'Link send Your mail' })
                 navigate('/')
             } catch (error) {
-                console.log(error);
-                alert('user not found')
-                
+                Toast.fire({ icon: 'error', title: 'Sorry User not found.!' })
             }
         }
     });
+    
     return (
         <>
             <div className="Forgot">

@@ -3,11 +3,23 @@ import { useFormik } from "formik";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import './Registration.css'
-
-
+import Swal from 'sweetalert2';
 
 function Registration(){
     let navigation = useNavigate()
+
+    //Alert function;
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
     
     //Registration method;
     let formik = useFormik({
@@ -31,10 +43,10 @@ function Registration(){
         onSubmit: async (User) => {
             try {
                 await axios.post('https://gold-rate-calculator.herokuapp.com/Register', User);
-                alert("Thankyou for Registration")
+                Toast.fire({ icon: 'success', title: 'Registration successfully' })
                 navigation('/')
             } catch (error) {
-                alert( `${error.response.data.Message}`)
+                Toast.fire({ icon: 'error', title: `${error.response.data.Message}` })
             }
         }
     });
@@ -63,8 +75,8 @@ function Registration(){
                     </div>
                     <button type="submit" disabled={!formik.isValid} className="btn mt-3">Register</button>
                 </form>
-                <div className="text-center fs-6">
-                    <h6>Already Have a Account</h6><a href="/" className="text-dark"><u>Click Here</u></a>
+                <div className="text-center odd fs-6">
+                    <h6 className="odd">Already Have a Account</h6><a href="/" className="text-dark odd"><u >Click Here</u></a>
                 </div>
             </div>
         </>

@@ -6,7 +6,10 @@ import { useEffect } from 'react';
 import { jsPDF } from 'jspdf';
 import { useRef } from 'react';
 
+
 function Calculator() {
+
+    //Data save points
     const [res, setres] = useState([]);
     const [city, setcity] = useState("");
     const [purity, setpurity] = useState("");
@@ -21,6 +24,7 @@ function Calculator() {
     const pdfRef = useRef(null);
     let states = [];
 
+    //API call point
     let getData = async () => {
         let response = await axios.get("https://gold-rate-calculator.herokuapp.com/All_Data");
         try {
@@ -29,11 +33,12 @@ function Calculator() {
             console.log(error);
         }
     };
-
+    //API Call time 
     useEffect(() => {
         getData();
     }, []);
 
+    //Data Loop and store;
     res.map((ele) => {
         states.push(ele.state);
     });
@@ -50,6 +55,7 @@ function Calculator() {
         setgram(event.target.value);
     };
 
+    //Conditions and Data push method;
     let f;
     let s;
     let data24;
@@ -83,6 +89,7 @@ function Calculator() {
         }
     };
 
+    //Data Html to PDF converter part
     const handleDownload = () => {
         const content = pdfRef.current;
 
@@ -101,23 +108,22 @@ function Calculator() {
     };
 
 
-
     return (
         <>
             <div className="card mb-2 price">
                 <div className="card-body text-center">
-                    <h5> Rate Calculator</h5>
+                    <h5 className='odd'> Rate Calculator</h5>
                 </div>
             </div>
             <div className="card mb-4 price ">
                 <div className="card-header">
                     <form className='Cal1 needs-validation' onSubmit={handlesubmit}>
-                        <select className="form-select mb-2 mt-1 price Cal" onChange={handleChange} value={city} aria-label=".form-select-lg example" required>
-                            {!city && <option value="DEFAULT">Select City</option>}
+                        <select className="form-select mb-2 mt-1 price Cal odd" onChange={handleChange} value={city} aria-label=".form-select-lg example" required>
+                            {!city && <option className='odd' value="DEFAULT">Select City</option>}
                             {
                                 states.map((ele, i) => {
                                     return (
-                                        <option key={i} value={ele}>{ele}</option>
+                                        <option className='odd' key={i} value={ele}>{ele}</option>
                                     )
                                 })
                             }
@@ -127,22 +133,22 @@ function Calculator() {
                             <input type="text" id="inputPassword6" onChange={handleChange2} value={gram || ""} className="form-control  mb-2 mt-1 price Cal" placeholder='Enter Gold Gram' aria-describedby="passwordHelpInline" required />
                         </div>
 
-                        <select className="form-select mb-2 mt-1 price Cal" required onChange={handleChange1} value={purity} aria-label="Default select example" >
-                            <option value="DEFAULT">Select Purity</option>
-                            <option value="24Carat">24 Carat</option>
-                            <option value="22Carat">22 Carat</option>
+                        <select className="form-select mb-2 mt-1 price Cal odd" required onChange={handleChange1} value={purity} aria-label="Default select example" >
+                            <option className='odd' value="DEFAULT">Select Purity</option>
+                            <option className='odd' value="24Carat">24 Carat</option>
+                            <option className='odd' value="22Carat">22 Carat</option>
                         </select>
 
                         <div>
-                            <button className="btn btn-warning mb-2 mt-1" type='submit'>calculate</button>
+                            <button className="btn btn-warning odd mb-2 mt-1" type='submit'>calculate</button>
                         </div>
                     </form>
                 </div>
                 {
                     result ? <div className="card-body" ref={pdfRef} id="tata">
-                        <h4 className='text-center mb-4 mt-1'>{respurity} Gold Price In {resstate} Today</h4>
+                        <h4 className='text-center mb-4 mt-1 odd'>{respurity} Gold Price In {resstate} Today</h4>
 
-                        <table className="table table-hover text-center">
+                        <table className="table table-hover text-center odd">
                             <thead>
                                 <tr>
                                     <th>Gram</th>
@@ -172,7 +178,9 @@ function Calculator() {
                 }
                 {
                     result ? <div className="card-footer text-end text-muted">
-                        <a href="#" className="btn btn-warning" onClick={handleDownload} >Click to Download</a>
+                        <button type="button" className="btn btn-warning btn-floating" onClick={handleDownload}>
+                            <i class="fas fa-download"></i>
+                        </button>
                     </div> : null
                 }
             </div>

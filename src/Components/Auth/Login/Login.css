@@ -9,6 +9,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.odd{
+    color: #000000 !important;
+}
+
 body {
     /* background:rgb(232, 195, 69); */
     background-image: url('../../Image/test13.jpg');

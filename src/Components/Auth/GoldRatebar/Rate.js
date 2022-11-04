@@ -36,8 +36,8 @@ function Rate() {
                                             <div className="flip-card-inner">
                                                 <div className="flip-card-front">
                                                     <form className='d-flex justify-content-center align-item-center mt-3'>
-                                                        <h4>{item.Carate}</h4><br />
-                                                        <small>{item.Day}</small>
+                                                        <h4 className='odd'>{item.Carate}</h4><br />
+                                                        <small className='odd'>{item.Day}</small>
                                                     </form>
                                                 </div>
                                                 <div className="flip-card-back">
