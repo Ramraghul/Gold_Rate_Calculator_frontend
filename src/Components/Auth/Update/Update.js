@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useFormik } from "formik";
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import './Update.css';
 
 function Update (){
     const test = useParams()
-
+    let navigate = useNavigate()
     let formik = useFormik({
 
         initialValues: {
@@ -24,6 +24,7 @@ function Update (){
             try {
                 await axios.post(`https://gold-rate-calculator.herokuapp.com/Update/${test.id}/${test.token}`,User);
                 alert('Password update done')
+                navigate('/')
             } catch (error) {
                 alert(`${error.response.data.Message}`)
             }
