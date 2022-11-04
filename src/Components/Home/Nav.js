@@ -24,7 +24,6 @@ function Nav() {
                             role="button"
                         >
                             <span className="mr-2 d-none d-lg-inline text-gray-600 small text-black">
-                                User Name
                             </span>
                             <img className="img-profile rounded-circle" src="./avatar.png" alt="Avatar"/>
                         </Link>

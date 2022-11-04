@@ -1,29 +1,25 @@
+import axios from 'axios'
 import React from 'react'
+import { useEffect } from 'react'
+import { useState } from 'react'
 import './Rate.css'
 
 function Rate() {
 
-    let data = [{
-        Carate: "18K",
-        Day: 'Gold Today Rate',
-        Rate: '4867.90',
-        Text: 'text-success'
-    }, {
-        Carate: "20K",
-        Day: 'Gold Today Rate',
-        Rate: '4786.87',
-        Text: 'text-danger'
-    }, {
-        Carate: "22K",
-        Day: 'Gold Today Rate',
-        Rate: '5089.23',
-        Text: 'text-success'
-    }, {
-        Carate: "22K",
-        Day: 'Gold Today Rate',
-        Rate: '5269.70',
-        Text: 'text-danger'
-    }]
+    const [data,setData]=useState([])
+
+    useEffect(()=>{
+        today()
+    },[])
+
+    let today = async()=>{
+        try {
+            let value = await axios.get('https://gold-rate-calculator.herokuapp.com/Rate_card')
+            setData(value.data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <>

@@ -22,7 +22,7 @@ function Calculator() {
     let states = [];
 
     let getData = async () => {
-        let response = await axios.get("https://goldrate-calculator.herokuapp.com/all/goldata");
+        let response = await axios.get("https://gold-rate-calculator.herokuapp.com/All_Data");
         try {
             setres(response.data);
         } catch (error) {

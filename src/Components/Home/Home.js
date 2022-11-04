@@ -15,7 +15,7 @@ function Home() {
                                 <div className="row">
                                     <div className="col-lg-12">
                                     <div className='trans rounded rounded mb-3'>
-                                    <LineChart></LineChart>
+                                    {/* <LineChart></LineChart> */}
                                     </div>
                                     </div>
                                     <div className="col-lg-12">
