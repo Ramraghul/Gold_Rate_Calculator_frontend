@@ -7,7 +7,7 @@ import Calculator from '../Calculator/Calculator';
 function Home() {
     return (
         <>
-                    <div id="content-wrapper" className="d-flex flex-column trans">
+                    <div id="content-wrapper" className="d-flex flex-column bg-light">
                         <div id="content">
                             <Nav></Nav>
                             <div className="container-fluid">

@@ -37,11 +37,15 @@
   }
 }
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 .trans{
   /* box-shadow: 13px 13px 20px #bc9928,-13px -13px 20px #bc9928; */
-  backdrop-filter: blur(3px);
-  box-sizing: 0 25px 25px rgba(225, 225, 225, 0.2);
-  background: rgba(225, 225, 225, 0.4);
+  backdrop-filter: blur(20px);
+  box-sizing: 0 25px 25px rgba(0, 0, 0, 0.2);
+  background: rgba(159, 146, 146, 0.4);
 }
  :root {
     --blue: #4e73df;
