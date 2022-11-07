@@ -115,7 +115,7 @@ function Calculator() {
                     <h5 className='odd'> Rate Calculator</h5>
                 </div>
             </div>
-            <div className="card mb-4 price ">
+            <div className="card mb-4 price">
                 <div className="card-header">
                     <form className='Cal1 needs-validation' onSubmit={handlesubmit}>
                         <select className="form-select mb-2 mt-1 price Cal odd" onChange={handleChange} value={city} aria-label=".form-select-lg example" required>
