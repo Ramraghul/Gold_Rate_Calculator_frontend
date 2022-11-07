@@ -177,7 +177,7 @@ function Calculator() {
                     </div> : null
                 }
                 {
-                    result ? <div className="card-footer text-end text-muted">
+                    result ? <div className="card-footer text-end text-muted price">
                         <button type="button" className="btn btn-warning btn-floating" onClick={handleDownload}>
                             <i class="fas fa-download"></i>
                         </button>
