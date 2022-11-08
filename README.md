@@ -8,6 +8,4 @@
 <br/>
 <h3>Registration Page</h3>
 <img src="./image2.jpeg" />
-<br/>
-<h3>Home Page</h3>
-<img src="./image3.jpeg" />
+
