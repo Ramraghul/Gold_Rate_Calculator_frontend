@@ -21,6 +21,7 @@
     "react-rt-chart": "^2.0.0",
     "react-scripts": "3.3.0",
     "react-sizeme": "^2.6.10",
+    "sweetalert": "^2.1.2",
     "sweetalert2": "^11.6.5"
   },
   "scripts": {

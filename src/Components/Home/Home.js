@@ -4,12 +4,15 @@ import Footer from './Footer';
 import Rate from '../Auth/GoldRatebar/Rate'
 import LineChart from '../Charts/linechart'
 import Calculator from '../Calculator/Calculator';
+import { useLocation } from 'react-router-dom';
 function Home() {
+    let location = useLocation()
+    let name = location.state
     return (
         <>
                     <div id="content-wrapper" className="d-flex flex-column bg-light">
                         <div id="content">
-                            <Nav></Nav>
+                            <Nav Name={name}></Nav>
                             <div className="container-fluid">
                                 <Rate></Rate>
                                 <div className="row">

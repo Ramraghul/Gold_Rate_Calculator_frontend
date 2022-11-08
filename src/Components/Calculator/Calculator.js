@@ -98,12 +98,9 @@ function Calculator() {
             callback: function (doc) {
                 doc.save('Gold_data.pdf');
             },
-            width: 100, // <- here
-            windowWidth: 1200, // <- here
-            hight: 500,
-            margin: 70,
-            padding: 2,
-
+            width: 180, // <- here
+            windowWidth: 500, // <- here
+            hight: 1000,
         });
     };
 
@@ -112,7 +109,7 @@ function Calculator() {
         <>
             <div className="card mb-2 price">
                 <div className="card-body text-center">
-                    <h5 className='odd'> Rate Calculator</h5>
+                    <h5 className='odd'>Gold Rate Calculator</h5>
                 </div>
             </div>
             <div className="card mb-4 price">
@@ -172,6 +169,10 @@ function Calculator() {
                                     <td>100 Gram</td>
                                     <td>{resval * 10}</td>
                                 </tr>
+                                <tr>
+                                    <td><mark>{gram} Gram</mark></td>
+                                    <td><mark>{(resval / 10) * gram }</mark></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div> : null
@@ -179,7 +180,7 @@ function Calculator() {
                 {
                     result ? <div className="card-footer text-end text-muted price">
                         <button type="button" className="btn btn-warning btn-floating" onClick={handleDownload}>
-                            <i class="fas fa-download"></i>
+                            <i className="fas fa-download"></i>
                         </button>
                     </div> : null
                 }

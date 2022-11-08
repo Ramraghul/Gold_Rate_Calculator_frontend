@@ -36,7 +36,7 @@ function Registration(){
             }
             //Password;
             if (value.Password.length <= 8) {
-                errors.Password = "border border-danger"
+                errors.Password = "Password must be 8 Digit"
             }
             return errors
         },
@@ -69,7 +69,8 @@ function Registration(){
                         <span className="fas fa-key"></span>
                         <input type="password" className="pwd" placeholder="Password" value={formik.values.Password} onChange={formik.handleChange} name='Password' required/>
                     </div>
-                    <div className={`form-field d-flex align-items-center ${formik.errors.Password}`}>
+                    <span className="text-warning">{formik.errors.Password}</span>
+                    <div className={`form-field d-flex align-items-center`}>
                         <span className="fas fa-key"></span>
                         <input type="password" className="pwd" placeholder="Conform Password" required/>
                     </div>

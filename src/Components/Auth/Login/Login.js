@@ -37,18 +37,17 @@ function Login() {
             }
             //Password;
             if (value.Password.length <= 8) {
-                errors.Password = "border border-danger"
+                errors.Password = "Password Must be Eight Degit"
             }
             return errors
         },
         onSubmit: async (Login) => {
             try {
                 let login = await axios.post("https://gold-rate-calculator.herokuapp.com/Login", Login);
-                console.log(login.data);
                 let watchman = login.data;
                 if (watchman.token) {
                     Toast.fire({ icon: 'success', title: 'Signed in successfully' })
-                    navigate('/Home')
+                    navigate('/Home',{state:watchman.Name});
                 } else {
                     Toast.fire({ icon: 'warning', title: `${watchman.Message}` })
                 }
@@ -71,10 +70,11 @@ function Login() {
                         <span className="fas fa-envelope"></span>
                         <input type="Email" id="userName" placeholder="Email" value={login.values.Email} onChange={login.handleChange} name="Email" required />
                     </div>
-                    <div className={`form-field d-flex align-items-center ${login.errors.Password}`}>
+                    <div className={`form-field d-flex align-items-center`}>
                         <span className="fas fa-key"></span>
                         <input type="password" id="pwd" placeholder="Password" value={login.values.Password} onChange={login.handleChange} name="Password" required />
                     </div>
+                    <span className="text-warning">{login.errors.Password}</span>
                     <button className="btn mt-3" type="submit">Login</button>
                 </form>
                 <div className="text-center fs-6">
