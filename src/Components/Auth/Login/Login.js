@@ -80,6 +80,12 @@ function Login() {
                 <div className="text-center fs-6">
                     <a href="Forgot" className="text-black">Forget password? or<>&nbsp;</></a><a href="/Registration" className="text-black"><>&nbsp;</>Sign up</a>
                 </div>
+
+                <span className="d-grid text-black bg-warning">
+                    <strong>For testing Purpose</strong>
+                    Email: Test@gmail.com <br/>
+                    Pass: Test@1234
+                </span>
             </div>
         </>
     )
