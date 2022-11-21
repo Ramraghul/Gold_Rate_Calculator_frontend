@@ -37,7 +37,7 @@ function Forgot() {
         },
         onSubmit: async (User) => {
             try {
-                let status = await axios.post('https://gold-rate-calculator.herokuapp.com/Reset', User);
+                let status = await axios.post('https://gold-rate-calculator-back-end.vercel.app/Reset', User);
                 console.log(status);
                 Toast.fire({ icon: 'success', title: 'Link send Your mail' })
                 navigate('/')

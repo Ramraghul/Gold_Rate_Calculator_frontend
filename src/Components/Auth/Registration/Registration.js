@@ -42,7 +42,7 @@ function Registration(){
         },
         onSubmit: async (User) => {
             try {
-                await axios.post('https://gold-rate-calculator.herokuapp.com/Register', User);
+                await axios.post('https://gold-rate-calculator-back-end.vercel.app/Register', User);
                 Toast.fire({ icon: 'success', title: 'Registration successfully' })
                 navigation('/')
             } catch (error) {

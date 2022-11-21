@@ -26,7 +26,7 @@ function Calculator() {
 
     //API call point
     let getData = async () => {
-        let response = await axios.get("https://gold-rate-calculator.herokuapp.com/All_Data");
+        let response = await axios.get("https://gold-rate-calculator-back-end.vercel.app/All_Data");
         try {
             setres(response.data);
         } catch (error) {

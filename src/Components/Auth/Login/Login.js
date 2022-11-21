@@ -43,7 +43,7 @@ function Login() {
         },
         onSubmit: async (Login) => {
             try {
-                let login = await axios.post("https://gold-rate-calculator.herokuapp.com/Login", Login);
+                let login = await axios.post("https://gold-rate-calculator-back-end.vercel.app/Login", Login);
                 let watchman = login.data;
                 if (watchman.token) {
                     Toast.fire({ icon: 'success', title: 'Signed in successfully' })

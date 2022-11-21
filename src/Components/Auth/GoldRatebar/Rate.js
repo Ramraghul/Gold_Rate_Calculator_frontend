@@ -14,7 +14,7 @@ function Rate() {
 
     let today = async()=>{
         try {
-            let value = await axios.get('https://gold-rate-calculator.herokuapp.com/Rate_card')
+            let value = await axios.get('https://gold-rate-calculator-back-end.vercel.app/Rate_card')
             setData(value.data)
         } catch (error) {
             console.log(error);

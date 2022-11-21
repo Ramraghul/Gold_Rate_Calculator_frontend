@@ -39,7 +39,7 @@ function Update() {
         },
         onSubmit: async (User) => {
             try {
-                await axios.post(`https://gold-rate-calculator.herokuapp.com/Update/${test.id}/${test.token}`, User);
+                await axios.post(`https://gold-rate-calculator-back-end.vercel.app/Update/${test.id}/${test.token}`, User);
                 Toast.fire({ icon: 'success', title: 'Password update done' })
                 navigate('/')
             } catch (error) {
